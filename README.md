@@ -46,3 +46,6 @@ Clonar repositorio y correr el comando
 npm install
 npm build
 npm start
+
+9 npm install uuid 
+
