@@ -1,4 +1,6 @@
 import express from 'express';
+
+
 import {
 	borrarNoticia,
 	crearNoticia,
@@ -6,6 +8,7 @@ import {
 	obtenerNoticiaId,
 } from './noticia.service';
 
+//tengo acceso a al instancia de express y voy a poder agregar rutas
 const noticiasRoutes = express.Router();
 
 // endpoint para crear una noticia
@@ -21,5 +24,6 @@ noticiasRoutes.get('/:id', obtenerNoticiaId);
 
 // [DELETE] endpoint borrar
 noticiasRoutes.delete('/:id', borrarNoticia);
+
 
 export default noticiasRoutes;
