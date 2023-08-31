@@ -1,19 +1,23 @@
 import { Request, Response } from 'express';
 import { iNoticia } from './noticia.interface';
-//import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
+//arreglo de noticia, fuente de almacenamiento, cuando se apaga se borran
 const noticiaDB: iNoticia[] = [];
+
+//se crea una constante que va a recibir un request y va responder un reponse desde postman
+//capturamos lo viene del body, creamso un objeto noticia,  
 
 export const crearNoticia = (req: Request, res: Response) => {
 	try {
 		const data: iNoticia = req.body;
-
+//si esto no viene tire un error, el sigo ! es sino
 		if (!data.titulo && !data.contenido) {
 			throw new Error();
 		}
 
 		const nuevaNoticia: iNoticia = {
-			id: uuidv4(),
+			id: uuidv4(), //nos va a dar un id randon
 			titulo: data.titulo,
 			contenido: data.contenido,
 			fecha: new Date().toLocaleDateString(),
@@ -26,7 +30,7 @@ export const crearNoticia = (req: Request, res: Response) => {
 		res.status(500).json({ msg: 'No se pudo guardar la noticia' });
 	}
 };
-
+//traernos todoas las noticias
 export const listarNoticia = (req: Request, res: Response) => {
 	try {
 		res.json(noticiaDB);
