@@ -2,7 +2,7 @@
   "name": "blog-express",
   "version": "1.0.0",
   "description": "Esta es una api simple",
-  "main": "server.ts",
+  "main": "server.js",
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/server.js",
