@@ -9,6 +9,6 @@ app.use(bodyParser.json());
 
 //app.use('/noticia', noticiasRoutes);
 
-app.listen(2000, () => {
-	console.log('Servidor funcionando OK en el PORT: 2000');
+app.listen( 4000, () => {
+	console.log('Servidor esta funcionando OK en el PORT: 4000');
 });
