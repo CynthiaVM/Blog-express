@@ -7,8 +7,8 @@ const app: Express = express();
 //instancia global de express es app
 app.use(bodyParser.json());
 
-//app.use('/noticia', noticiasRoutes);
+app.use('/noticia', noticiasRoutes);
 
-app.listen( 4000, () => {
-	console.log('Servidor esta funcionando OK en el PORT: 4000');
+app.listen( 2000, () => {
+	console.log('Servidor esta funcionando OK en PORT: 2000');
 });
